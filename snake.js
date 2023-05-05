@@ -8,7 +8,7 @@ export function update() {
 }
 
 /** Start position of snake */
-export function draw() {
+export function draw(gameBoard) {
     snakeBody.forEach(segment => {
         const snakeElement = document.createElement('div')
         snakeElement.style.gridRowStart = segment.x
@@ -16,3 +16,4 @@ export function draw() {
         snakeElement.classList.add('snake')
         gameBoard.appendChild(snakeElement)
     })
+}
