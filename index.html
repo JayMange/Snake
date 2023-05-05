@@ -16,6 +16,7 @@
             background-color: black;
         }
 
+        /** Code for gameboard **/
         #game-board {
             background-color: #ccc;
             width: 100vmin;
@@ -23,6 +24,17 @@
             display: grid;
             grid-template-rows: repeat(21, 1fr);
             grid-template-columns: repeat(21, 1fr);
+        }
+
+        /** Code for Snake and food **/
+        .snake {
+            background-color: red;
+            border: .25vmin solid black;
+        }
+
+        .food {
+            background-color: yellow;
+            border: .25vmin solid black;
         }
     </style>
 </head>
