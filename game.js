@@ -24,6 +24,7 @@ function update() {
     updateSnake()
 }
 
+/**This displays the snake on the website and removes the last square of the snake when it moves */
 function draw() {
     gameBoard.innerHTML = ''
     drawSnake(gameBoard)

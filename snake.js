@@ -1,5 +1,7 @@
 /* Code for the Snakes body **/
 
+import { getInputDirection } from "./input"
+
 export const SNAKE_SPEED = 1
 const snakeBody =[
     { x: 10, y: 11 },
@@ -10,6 +12,7 @@ const snakeBody =[
 
 //**Code for moving the snake body */
 export function update() {
+    const inputDirection = getInputDirection()
     for (let i = snakeBody.length - 2; i >= 0; i--) {
         snakeBody[i + 1] = { ...snakeBody[i] }
     }
