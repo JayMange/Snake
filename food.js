@@ -1,4 +1,6 @@
 import { onSnake, expandSnake } from "./snake.js"
+import { randomGridPosition } from "./grid.js"
+
 /**Code for food and making the snake bigger */
 let food = getRandomFoodPosition()
 const INITIAL_EXPANSION_RATE = 1
@@ -9,6 +11,7 @@ export function update() {
         expandSnake(currentExpansionRate)
         currentExpansionRate++
         food = getRandomFoodPosition()
+    }
 }
 
 /** Start position of food */
