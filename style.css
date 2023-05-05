@@ -1,0 +1,47 @@
+/* Set the background color and font color of the entire page to a dark grey, and set the font family to Open Sans */
+body {
+    background-color: #212529;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the container element both horizontally and vertically, and make it take up the full height of the viewport */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style the title element with a large font size, bold weight, and some bottom margin */
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+/* Style the button elements with some padding, a border, rounded corners, and a medium font size and weight. Also set a top margin and a cursor that changes to a pointer on hover. */
+.btn {
+    padding: 1rem 2rem;
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* When hovering over the button elements, change the background color to white and the font color to dark grey */
+.btn:hover {
+    background-color: #fff;
+    color: #212529;
+}
+
+/* When a button element is in focus, remove the default outline that appears */
+.btn:focus {
+    outline: none;
+}
