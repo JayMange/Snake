@@ -10,7 +10,10 @@ const gameBoard = document.getElementById('game-board')
 /**Game loop that tells browser when to render next frame */
 function main(currentTime) {
     if (gameOver) {
-       return alert('You Lose')
+       if (confirm('You lost. Press ok to restart.')) {
+        window.location = '/'
+       }
+       return
     }
 
     window.requestAnimationFrame(main)
