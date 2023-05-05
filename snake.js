@@ -3,12 +3,7 @@
 import { getInputDirection } from "./input.js"
 
 export const SNAKE_SPEED = 1
-const snakeBody =[
-    { x: 10, y: 11 },
-    { x: 11, y: 11 },
-    { x: 12, y: 11 },
-    { x: 13, y: 11 }
-]
+const snakeBody =[{ x: 11, y: 11 }]
 
 //**Code for moving the snake body */
 export function update() {
@@ -17,8 +12,8 @@ export function update() {
         snakeBody[i + 1] = { ...snakeBody[i] }
     }
 
-    snakeBody[0].x += 1
-    snakeBody[0].y += 0
+    snakeBody[0].x += inputDirection.x
+    snakeBody[0].y += inputDirection.y
 }
 
 /** Start position of snake */
