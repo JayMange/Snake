@@ -1,6 +1,6 @@
 /* Code for the Snakes body **/
 
-import { getInputDirection } from "./input"
+import { getInputDirection } from "./input.js"
 
 export const SNAKE_SPEED = 1
 const snakeBody =[
