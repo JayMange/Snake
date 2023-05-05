@@ -1,5 +1,6 @@
 /** Snake code linked */
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from "./snake.js"
+import { update as updateFood, draw as drawFood } from "./food.js"
 
 let lastRenderTime = 0
 const gameBoard = document.getElementById('game-board')
@@ -22,10 +23,12 @@ window.requestAnimationFrame(main)
 
 function update() {
     updateSnake()
+    updateFood()
 }
 
-/**This displays the snake on the website and removes the last square of the snake when it moves */
+/**This displays the gameboard and changes made to it */
 function draw() {
     gameBoard.innerHTML = ''
     drawSnake(gameBoard)
+    drawFood(gameBoard)
 }
