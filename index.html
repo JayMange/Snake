@@ -41,10 +41,35 @@
             background-color: yellow;
             border: .25vmin solid black;
         }
+
+        /** Code for start menu **/
+        #start-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        #start-menu button {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+            background-color: green;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 1rem;
+        }
     </style>
     <script src="game.js" defer type="module"></script>
 </head>
 <body>
+    <div id="start-menu">
+        <h1>Snake - A Classic Retro Game</h1>
+        <button id="start-button">Start Game</button>
+    </div>
     <div id="game-board"></div>
 </body>
 </html>
