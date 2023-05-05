@@ -10,6 +10,17 @@ function main(currentTime) {
 
     console.log('Render')
     lastRenderTime = currentTime
+
+    update()
+    draw()
 }
 
 window.requestAnimationFrame(main)
+
+function update() {
+
+}
+
+function draw() {
+    
+}
