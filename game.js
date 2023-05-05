@@ -21,6 +21,7 @@ function main(currentTime) {
 
 window.requestAnimationFrame(main)
 
+/**This tracks changes made to the snake and food */
 function update() {
     updateSnake()
     updateFood()
