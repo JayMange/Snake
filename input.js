@@ -1,12 +1,12 @@
-// This defines variables to store the current input direction and the last input direction.
+// Initialize input direction and last input direction
 let inputDirection = { x: 0, y: 0 }
 let lastInputDirection = { x: 0, y: 0 }
 
-// Add an event listener for keydowns
+// Listen for keydown events
 window.addEventListener('keydown', e => {
+    // Change input direction based on key pressed
     switch (e.key) {
         case 'ArrowUp':
-            // This prevents the snake from reversing direction
             if (lastInputDirection.y !== 0) break
             inputDirection = { x: 0, y: -1 }
             break
@@ -25,7 +25,9 @@ window.addEventListener('keydown', e => {
     }
 })
 
+// Get the current input direction
 export function getInputDirection() {
+    // Update last input direction and return current input direction
     lastInputDirection = inputDirection
     return inputDirection
 }

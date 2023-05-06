@@ -1,13 +1,14 @@
-// These are imports from snake.js and grid.js
 import { onSnake, expandSnake } from "./snake.js"
 import { randomGridPosition } from "./grid.js"
 
-// This declares a variable food and assigns it a random position returned by the getRandomFoodPosition() function
+// Set initial postition of food
 let food = getRandomFoodPosition()
+
+// Set expand rate and track expansion
 const INITIAL_EXPANSION_RATE = 1
 let currentExpansionRate = INITIAL_EXPANSION_RATE
 
-// This function checks if the snake has collided with the food, and calls the expandSnake() function to make the snake bigger and assigns a new position to the food
+// Update function for checking if snake eats food
 export function update() {
     if (onSnake(food)) {
         expandSnake(currentExpansionRate)
@@ -16,7 +17,7 @@ export function update() {
     }
 }
 
-// This is for the start position of food
+// Draw function for rendering the food on the game board
 export function draw(gameBoard) {
     const foodElement = document.createElement('div')
     foodElement.style.gridRowStart = food.y
@@ -25,7 +26,7 @@ export function draw(gameBoard) {
     gameBoard.appendChild(foodElement)
 }
 
-// This randomizes the food position
+// Randomizes food position
 function getRandomFoodPosition() {
     let newFoodPosition
     while (newFoodPosition == null || onSnake(newFoodPosition)) {

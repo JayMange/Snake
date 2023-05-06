@@ -1,27 +1,33 @@
-// Code for the Snakes body
+/* Code for the Snakes body **/
 
 import { getInputDirection } from "./input.js"
 
-// The speed of the snake in grid units per second
+// Snake speed
 export const SNAKE_SPEED = 5
-// This keeps track of the snakes body
+// Starting postition
 const snakeBody =[{ x: 11, y: 11 }]
 let newSegments = 0
 
 // Code for moving the snake body
 export function update() {
+
+    // Makes snake bigger when it eats food
     addSegments()
 
+    // Get user input direction
     const inputDirection = getInputDirection()
+
+    // Update the position of the snake body segments
     for (let i = snakeBody.length - 2; i >= 0; i--) {
         snakeBody[i + 1] = { ...snakeBody[i] }
     }
 
+    // Move the head of the snake based on user direction
     snakeBody[0].x += inputDirection.x
     snakeBody[0].y += inputDirection.y
 }
 
-// Start position of snake 
+// Draw the snake on the game board 
 export function draw(gameBoard) {
     snakeBody.forEach(segment => {
         const snakeElement = document.createElement('div')
@@ -32,12 +38,12 @@ export function draw(gameBoard) {
     })
 }
 
-// This tracks the number of segments that ned to be added to the snake
+// Expand the snake by a specified amount
 export function expandSnake(amount) {
     newSegments += amount
 }
 
-// This checks the position of the snakes body while ignoring the head.
+// Check if a given position is on the snake
 export function onSnake(position, { ignoreHead = false } = {}) {
     return snakeBody.some((segment, index) => {
         if (ignoreHead && index === 0) return false
@@ -45,22 +51,22 @@ export function onSnake(position, { ignoreHead = false } = {}) {
     })
 }
 
-// This returns the position of the snakes head segment
+// Get the position of the head of the snake
 export function getSnakeHead() {
     return snakeBody[0]
 }
 
-// This checks to see if the snake head has intersected with any part of the snakes body
+// Check if the snake has intersected itself
 export function snakeIntersect() {
     return onSnake(snakeBody[0], { ignoreHead: true })
 }
 
-//  This function returns true if two positions are equal (i.e., have the same x and y coordinates)
+// Check if two positions are equal
 function equalPositions(pos1, pos2) {
     return pos1.x === pos2.x && pos1.y === pos2.y
 }
 
-// This code makes the snake bigger when it eats food
+// Add new segments to the snake body 
 function addSegments() {
     for (let i = 0; i < newSegments; i++) {
         snakeBody.push({ ...snakeBody[snakeBody.length - 1] })
